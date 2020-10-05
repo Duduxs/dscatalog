@@ -43,9 +43,9 @@ public class ProductResource  {
 			@RequestParam(value = "orderBy", defaultValue = "name") String orderBy){
 		
 		PageRequest pageRequest = PageRequest.of(page, linesPerPage, Direction.valueOf(direction), orderBy);
-		Page<ProductDTO> category = productService.findAllPaged(pageRequest);
+		Page<ProductDTO> product = productService.findAllPaged(pageRequest);
 		
-		return ResponseEntity.ok().body(category);
+		return ResponseEntity.ok().body(product);
 	}
 	
 	@PostMapping

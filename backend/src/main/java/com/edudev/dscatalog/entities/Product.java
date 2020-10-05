@@ -1,4 +1,4 @@
-package com.edudev.dscatalog.entities;
+ package com.edudev.dscatalog.entities;
 
 import java.io.Serializable;
 import java.time.Instant;
