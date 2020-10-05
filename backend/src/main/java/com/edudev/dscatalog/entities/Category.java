@@ -62,7 +62,7 @@ public class Category implements Serializable {
 	public Instant getUpdatedAt() {
 		return updatedAt;
 	}
-	
+
 	@PrePersist
 	public void prePersist() {
 		createdAt = Instant.now();
@@ -72,6 +72,7 @@ public class Category implements Serializable {
 	public void preUpdate() {
 		updatedAt = Instant.now();
 	}
+	
 
 	@Override
 	public int hashCode() {
