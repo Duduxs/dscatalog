@@ -1,6 +1,7 @@
 import React from 'react';
 import ProductCard from './components/ProductCard';
 import './styles.scss';
+import { NavLink } from 'react-router-dom';
 
 const Catalog = () => (
     <div className="catalog-container">
@@ -8,14 +9,14 @@ const Catalog = () => (
             Catálogo de produtos
         </h1>
         <div className="catalog-products">
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
+            <NavLink to="/products/1"><ProductCard /></ NavLink>
+            <NavLink to="/products/2"><ProductCard /></ NavLink>
+            <NavLink to="/products/3"><ProductCard /></ NavLink>
+            <NavLink to="/products/4"><ProductCard /></ NavLink>
+            <NavLink to="/products/5"><ProductCard /></ NavLink>
+            <NavLink to="/products/6"><ProductCard /></ NavLink>
+            <NavLink to="/products/7"><ProductCard /></ NavLink>
+            <NavLink to="/products/8"><ProductCard /></ NavLink>
         </div>
     </div>
 );

@@ -1,6 +1,14 @@
 .product-card {
     padding: 20px 20px 34px 20px;
     text-align: center;
+
+    &:focus,
+    &:hover{
+        transform: scale(1.1);
+        transition: all 0.5s ease-in;
+    }
+    transition: 1s;
+
 }
 
 .catalog-product-info {
@@ -14,6 +22,7 @@
     font-size: 18px;
     line-height: 25px;
     letter-spacing: -0.015em;
+    color: black;
 }
 
 .catalog-product-price-container {

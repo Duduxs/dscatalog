@@ -12,7 +12,7 @@ const Home = () => (
                 <p className="home-p">
                     Ajudaremos você a encontrar os melhores <br /> produtos disponíveis do mercado.
                 </p>
-                <NavLink to="/catalog">
+                <NavLink to="/products">
                 <ButtonIcon text="INICIE AGORA A SUA BUSCA" />
                 </NavLink>
             </div>
