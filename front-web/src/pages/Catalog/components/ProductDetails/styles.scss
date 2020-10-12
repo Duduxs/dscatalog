@@ -8,9 +8,19 @@
     padding: 50px 60px 90px 60px;
 }
 
+.product-details-image{
+    &:focus,
+    &:hover{
+        transform: scale(1.2);
+        transition: all 0.5s ease-in;
+    }
+    transition: 1s;
+}
+
 .product-details-goback {
     display: flex;
     align-items: center;
+    margin-bottom: 20px;
 }
 
 .icon-goback {
@@ -25,3 +35,8 @@
     letter-spacing: -0.015em;
     color: #263238;
 }
+
+.product-details .product-price {
+    font-size: 48px;
+}
+
