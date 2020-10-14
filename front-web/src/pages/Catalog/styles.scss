@@ -11,6 +11,22 @@
     letter-spacing: -0.015rem;
 }
 
+.catalog-button-container{
+    margin-left: 1600px;
+}
+
+.catalog-button-container .catalog-button-name, .catalog-button-price{
+    width: 80px;
+    border-radius: 5px;
+    background-color: rgba(255,255,255,0.5);
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.116);
+    margin-right: 15px;
+
+    &:hover {
+        background-color: #FFF;
+    }
+}
+
 .catalog-products{
     margin-top: 43px;
     display: grid;    
