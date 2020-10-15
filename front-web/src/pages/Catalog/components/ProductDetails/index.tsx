@@ -18,7 +18,7 @@ const ProductDetails = () => {
     useEffect(() => {
             makeRequest({ url: `/products/${productId}`})
             .then(response => setProduct(response.data));
-    }, [])
+    }, [productId])
 
     return (
         <div className="product-details-container">
@@ -35,7 +35,7 @@ const ProductDetails = () => {
                         <h1 className="product-details-name">
                             {product?.name}
                         </h1>
-                        <ProductPrice price={product?.price || 0}/>
+                        {product?.price && <ProductPrice price={product?.price}/> }
                     </div>
                     <div className="col-6 product-details-card">
                         <h1 className="product-description-title">
