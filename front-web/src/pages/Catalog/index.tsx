@@ -3,12 +3,15 @@ import ProductCard from './components/ProductCard';
 import { NavLink } from 'react-router-dom';
 import { makeRequest } from '../../core/utils/request';
 import { ProductsResponse } from '../../core/types/Product';
+import ProductCardLoader from './components/ProductCardLoader';
 
 import './styles.scss';
+
 
 const Catalog = () => { 
 
     const [productsResponse, setProductsResponse] = useState<ProductsResponse>();
+    const [isLoading, setIsLoading] = useState(false);
     const [order, setOrder] = useState('id');
 
     useEffect(() => {
@@ -18,9 +21,10 @@ const Catalog = () => {
             orderBy: order,
             direction: 'DESC'
         }
-
+        setIsLoading(true);
         makeRequest({ url: '/products', params})
-        .then(response => setProductsResponse(response.data));
+        .then(response => setProductsResponse(response.data))
+        .finally(() => { setIsLoading(false) })
         
     }, [order])
 
@@ -36,10 +40,14 @@ const Catalog = () => {
         </div>
 
         <div className="catalog-products">
-            {productsResponse?.content.map(product => (
+        {isLoading ? <ProductCardLoader /> : (
+           
+           productsResponse?.content.map(product => (
              <NavLink to={`/products/${product.id}`} key={product.id}><ProductCard product={product}/>
              </ NavLink>
-            ))}
+            
+            ))
+          )}
         </div>
     </div>
     )
