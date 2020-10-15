@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import ProductCard from './components/ProductCard';
 import { NavLink } from 'react-router-dom';
-import { makeRequest } from '../../core/utils/request';
-import { ProductsResponse } from '../../core/types/Product';
-import ProductCardLoader from './components/ProductCardLoader';
+import { makeRequest } from 'core/utils/request';
+import { ProductsResponse } from 'core/types/Product';
+import ProductCardLoader from './components/Loaders/ProductCardLoader';
 
 import './styles.scss';
 
@@ -17,7 +17,7 @@ const Catalog = () => {
     useEffect(() => {
         const params = {
             page: 0,
-            linesPerPage: 20,
+            linesPerPage: 12,
             orderBy: order,
             direction: 'DESC'
         }
